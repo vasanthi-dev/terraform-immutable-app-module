@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "asg" {
   vpc_zone_identifier       = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNETS
   tag {
     key                 = "Name"
-    value               = "${var.COMPONENT}-${var.APP_VERSION}"
+    value               = "${var.COMPONENT}-${var.ENV}"
     propagate_at_launch = true
   }
 }
